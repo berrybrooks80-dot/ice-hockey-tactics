@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOCKEY TACTICS — Positions · Power Play · Penalty Kill</title>
+<meta name="description" content="An animated playbook for ice hockey tactics: position-by-position roles, 1-3-1, umbrella, overload and spread power plays, diamond, box, wedge+1 and 1-3 penalty kills, and traditional versus modern systems with moving tactic boards.">
+<meta name="theme-color" content="#08192B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#home">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#home" aria-label="HOCKEY TACTICS home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" class="bm-ring"/><circle cx="10" cy="11" r="2.6" class="bm-dot"/><circle cx="21" cy="10" r="2.6" class="bm-dot"/><circle cx="16" cy="21" r="2.6" class="bm-dot"/><path d="M10 11 L21 10 L16 21 Z" class="bm-net"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>HOCKEY<span>TACTICS</span></strong>
+        <em>Positions · PP · PK</em>
+      </span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="#home" class="is-active">Home</a></li>
+        <li><a href="#positions">Positions</a></li>
+        <li><a href="#powerplay">Power Play</a></li>
+        <li><a href="#penaltykill">Penalty Kill</a></li>
+        <li><a href="#special">Special</a></li>
+        <li><a href="#faceoffs">Face-offs</a></li>
+        <li><a href="#systems">Trad vs Modern</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-controls">
+      <button class="ctrl-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
+        <span class="ctrl-ico" aria-hidden="true">
+          <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2Z"/></svg>
+          <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+        </span>
+        <span class="ctrl-label" id="themeLabel">Light</span>
+      </button>
+      <button class="ctrl-btn ctrl-btn--lang" id="langToggle" type="button" aria-pressed="false" aria-label="Switch to Korean">
+        <span class="ctrl-ico ctrl-ico--lang" aria-hidden="true">文</span>
+        <span class="ctrl-label" id="langLabel">한국어</span>
+      </button>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="hero-glow hero-glow--a"></span>
+      <span class="hero-glow hero-glow--b"></span>
+      <span class="hero-grid"></span>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker"><span class="dot" aria-hidden="true"></span>2026-27 Tactics Edition</p>
+
+        <h1 class="hero-title" id="heroTitle">
+          <span class="ht-line ht-line--1" data-reveal>ICE-HOCKEY</span>
+          <span class="ht-line ht-line--2" data-reveal>TACTICS</span>
+        </h1>
+
+        <p class="hero-sub" data-reveal>
+          Who stands where — and why it keeps moving. Position roles, power play and
+          penalty kill structures, and the shift from traditional systems to the
+          layered, position-fluid game played now. Every structure is drawn on a
+          tactic board that plays itself.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a class="btn btn--primary" href="#powerplay">Open the playbook</a>
+          <a class="btn btn--ghost" href="#positions">Position roles</a>
+          <a class="btn btn--ghost" href="#systems">Trad vs Modern</a>
+        </div>
+
+        <ul class="hero-meta" data-reveal>
+          <li><b>6</b><span>Positions</span></li>
+          <li><b>22</b><span>Structures</span></li>
+          <li><b>30</b><span>Tactic boards</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-figure" data-reveal>
+        <div class="mini-board mini-board--hero" data-board="hero" data-mode="hero" aria-label="Animated 1-3-1 power play on a tactic board"></div>
+        <p class="figure-caption">Live board — 1-3-1 power play rotation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POSITIONS ============ -->
+  <section class="section" id="positions" aria-labelledby="posTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">01 — Positions</p>
+        <h2 id="posTitle">Six jobs, one shape</h2>
+        <p class="section-lede">A hockey lineup looks like a fixed set of six, but each job is defined by where it happens: the goal line, the walls, the slot, the blue line. Click a position on the board to read its job in all three zones.</p>
+      </header>
+
+      <div class="pos-layout">
+        <figure class="pos-board" data-reveal>
+          <svg viewBox="0 0 600 280" class="rink-svg" role="img" aria-label="Hockey positions marked on a rink in the defensive zone: goaltender, two defencemen, centre, left wing, right wing">
+            <g class="rink-art"></g>
+            <g class="pos-dots">
+              <g class="pos-dot" data-pos="G"><circle cx="52" cy="140" r="12"/><text x="52" y="144">G</text></g>
+              <g class="pos-dot" data-pos="LD"><circle cx="118" cy="92" r="13"/><text x="118" y="96">LD</text></g>
+              <g class="pos-dot" data-pos="RD"><circle cx="118" cy="188" r="13"/><text x="118" y="192">RD</text></g>
+              <g class="pos-dot" data-pos="C"><circle cx="176" cy="140" r="13"/><text x="176" y="144">C</text></g>
+              <g class="pos-dot" data-pos="LW"><circle cx="236" cy="62" r="13"/><text x="236" y="66">LW</text></g>
+              <g class="pos-dot" data-pos="RW"><circle cx="236" cy="218" r="13"/><text x="236" y="222">RW</text></g>
+            </g>
+            <g class="pos-lanes">
+              <path d="M40 92 H560" class="lane"/>
+              <path d="M40 140 H560" class="lane lane--mid"/>
+              <path d="M40 188 H560" class="lane"/>
+            </g>
+          </svg>
+          <figcaption>Defensive-zone base shape: three lanes, two walls, one net front.</figcaption>
+        </figure>
+
+        <div class="pos-cards" id="posCards">
+          <article class="pos-card is-active" data-pos="C" data-reveal>
+            <header><span class="pos-badge">C</span><h3>Centre</h3><span class="pos-tag">The 200-foot job</span></header>
+            <p>The only forward with a built-in responsibility at both nets. Takes the face-off, is the low support on breakouts, and is usually the first forward back as F3.</p>
+            <dl class="pos-zone">
+              <div><dt>Own zone</dt><dd>Low slot support, face-off coverage, second man on the puck below the goal line.</dd></div>
+              <div><dt>Neutral zone</dt><dd>Swing lane through the middle, first pass option, back-pressure on the puck carrier.</dd></div>
+              <div><dt>Offensive zone</dt><dd>Slot and bumper, net-front screens, low cycle support.</dd></div>
+            </dl>
+          </article>
+
+          <article class="pos-card" data-pos="LW" data-reveal>
+            <header><span class="pos-badge">LW</span><h3>Left Wing</h3><span class="pos-tag">Wall and lane</span></header>
+            <p>Works the strong-side wall, which makes him the primary outlet on a rim or a wall battle. Modern wings are also the first forechecker on the puck side.</p>
+            <dl class="pos-zone">
+              <div><dt>Own zone</dt><dd>Strong-side wall, point coverage when the D steps up, breakout outlet.</dd></div>
+              <div><dt>Neutral zone</dt><dd>Wide lane, stretch option, first man in on a dump-in.</dd></div>
+              <div><dt>Offensive zone</dt><dd>Half-wall on the power play, net-front or slot depending on the system.</dd></div>
+            </dl>
+          </article>
+
+          <article class="pos-card" data-pos="RW" data-reveal>
+            <header><span class="pos-badge">RW</span><h3>Right Wing</h3><span class="pos-tag">Weak-side threat</span></header>
+            <p>Mirror of the left wing, but often the designated weak-side shooter: back-door on the power play, far-post on a 2-on-1, and the late man on a cycle.</p>
+            <dl class="pos-zone">
+              <div><dt>Own zone</dt><dd>Weak-side wall and back-door coverage, second man high.</dd></div>
+              <div><dt>Neutral zone</dt><dd>Wide lane with a read: stretch if the puck is won, curl back if it is lost.</dd></div>
+              <div><dt>Offensive zone</dt><dd>Off-ball movement, weak-side post, one-timer option.</dd></div>
+            </dl>
+          </article>
+
+          <article class="pos-card" data-pos="LD" data-reveal>
+            <header><span class="pos-badge">LD</span><h3>Left Defence</h3><span class="pos-tag">Gap and first pass</span></header>
+            <p>Owns the left half of the defensive zone and the break-out start. The modern job is less about hitting and more about the first pass under pressure and stepping into the rush.</p>
+            <dl class="pos-zone">
+              <div><dt>Own zone</dt><dd>Net-front box-out, corner retrievals, first pass or rim under forecheck.</dd></div>
+              <div><dt>Neutral zone</dt><dd>Gap control at the blue line, stand-up or step-up depending on the system.</dd></div>
+              <div><dt>Offensive zone</dt><dd>Point on the power play, walking the line, shot-pass and activation.</dd></div>
+            </dl>
+          </article>
+
+          <article class="pos-card" data-pos="RD" data-reveal>
+            <header><span class="pos-badge">RD</span><h3>Right Defence</h3><span class="pos-tag">Partner and coverage</span></header>
+            <p>Reads off the left defence: if one goes, the other stays. On the power play the right D is often the shooter at the top of the umbrella; on the kill, the net-front blocker.</p>
+            <dl class="pos-zone">
+              <div><dt>Own zone</dt><dd>Front-of-net coverage, second retrieve, shot blocking in the lane.</dd></div>
+              <div><dt>Neutral zone</dt><dd>Support on a pinch, cover the middle if the partner steps up.</dd></div>
+              <div><dt>Offensive zone</dt><dd>Second point, one-timer threat, keeping the puck alive at the line.</dd></div>
+            </dl>
+          </article>
+
+          <article class="pos-card" data-pos="G" data-reveal>
+            <header><span class="pos-badge">G</span><h3>Goaltender</h3><span class="pos-tag">Angles and rebound control</span></header>
+            <p>The last line, but also the first read: depth and angle decide how much net is actually open. Modern goaltending is a positioning system more than a reflex contest.</p>
+            <dl class="pos-zone">
+              <div><dt>Own zone</dt><dd>Square to the puck, cut the angle, control rebounds to the corners, post play.</dd></div>
+              <div><dt>Neutral zone</dt><dd>Communication, puck play behind the net where the rules allow it.</dd></div>
+              <div><dt>Offensive zone</dt><dd>Sixth attacker on a delayed penalty, break-out support, setting the puck up.</dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+
+      <div class="table-scroll" data-reveal>
+        <table class="data-table">
+          <caption class="sr-only">Position responsibilities by zone</caption>
+          <thead>
+            <tr><th scope="col">Position</th><th scope="col">Own-zone job</th><th scope="col">Neutral-zone job</th><th scope="col">Offensive-zone job</th><th scope="col">Key skill</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">C</th><td>Low support, face-offs</td><td>Middle-lane swing</td><td>Slot, bumper, net front</td><td>Reads and 200-foot discipline</td></tr>
+            <tr><th scope="row">LW / RW</th><td>Wall and point coverage</td><td>Wide lane, stretch</td><td>Half-wall, weak-side post</td><td>Wall battles, off-ball timing</td></tr>
+            <tr><th scope="row">LD / RD</th><td>Net front, retrievals</td><td>Gap control</td><td>Point, walk the line</td><td>First pass under pressure</td></tr>
+            <tr><th scope="row">G</th><td>Angle, rebound control</td><td>Communication</td><td>Puck support</td><td>Depth control</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout" data-reveal>
+        <p class="callout-title">The modern twist: roles beat numbers</p>
+        <p>Coaches increasingly describe players by job rather than by listed position — <b>F1</b> (first forechecker), <b>F2</b> (support), <b>F3</b> (high forward), strong-side, weak-side, bumper, net-front. A centre may spend a shift as F1 while a winger covers the middle. The number on the sweater still matters at the face-off dot; after that, the system assigns the job.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ POWER PLAY ============ -->
+  <section class="section section--alt" id="powerplay" aria-labelledby="ppTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">02 — Power Play</p>
+        <h2 id="ppTitle">Five skaters, more space, one timer</h2>
+        <p class="section-lede">A power play is a geometry problem: create a two-on-one somewhere, then move the puck there faster than the penalty kill can rotate. Four structures do most of the work.</p>
+      </header>
+
+      <div class="playbook" data-reveal>
+        <div class="tabs" role="tablist" aria-label="Power play structures" data-tabs="pp">
+          <button class="tab is-active" role="tab" aria-selected="true" data-play="pp131">1-3-1</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="ppUmbrella">Umbrella</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="ppOverload">Overload</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="ppSpread">Spread 2-1-2</button>
+        </div>
+
+        <div class="board-stage">
+          <div class="board board--lg" data-board="pp" data-play="pp131"></div>
+          <div class="board-side">
+            <h3 class="side-title" id="ppName">1-3-1</h3>
+            <p class="side-sub" id="ppSub">One point, three across, one at the net.</p>
+            <ol class="steps" id="ppSteps"></ol>
+            <div class="legend">
+              <span class="lg-item"><i class="lg-dot lg-dot--h"></i>Attacking five</span>
+              <span class="lg-item"><i class="lg-dot lg-dot--a"></i>Penalty kill four</span>
+              <span class="lg-item"><i class="lg-puck"></i>Puck</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tactic-grid" id="ppCards"></div>
+
+      <aside class="callout" data-reveal>
+        <p class="callout-title">Why the 1-3-1 took over</p>
+        <p>It spreads the ice, keeps a body in front of the net at all times and puts shooters where they can shoot off the pass. It also rotates into an umbrella or overload look in a single pass, which is why it has largely replaced fixed set plays at the top level — the shape hides the next play. Personnel matters: handedness sets who can one-time from where, and the bumper needs to read a seam rather than stand still.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ PENALTY KILL ============ -->
+  <section class="section" id="penaltykill" aria-labelledby="pkTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">03 — Penalty Kill</p>
+        <h2 id="pkTitle">Four skaters against five, and still a plan</h2>
+        <p class="section-lede">The kill chooses what to give up. Every structure is a trade: pressure buys time and risk, a box buys the slot and gives the perimeter. Most modern kills are a blend, and switch between them shift by shift.</p>
+      </header>
+
+      <div class="playbook" data-reveal>
+        <div class="tabs" role="tablist" aria-label="Penalty kill structures" data-tabs="pk">
+          <button class="tab is-active" role="tab" aria-selected="true" data-play="pkDiamond">Diamond</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="pkBox">Passive box</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="pkWedge">Wedge + 1</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="pk13">1-3</button>
+        </div>
+
+        <div class="board-stage">
+          <div class="board board--lg" data-board="pk" data-play="pkDiamond"></div>
+          <div class="board-side">
+            <h3 class="side-title" id="pkName">Diamond</h3>
+            <p class="side-sub" id="pkSub">One high, two flanks, one at the net.</p>
+            <ol class="steps" id="pkSteps"></ol>
+            <div class="legend">
+              <span class="lg-item"><i class="lg-dot lg-dot--h"></i>Attacking five</span>
+              <span class="lg-item"><i class="lg-dot lg-dot--a"></i>Penalty kill four</span>
+              <span class="lg-item"><i class="lg-puck"></i>Puck</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tactic-grid" id="pkCards"></div>
+
+      <aside class="callout" data-reveal>
+        <p class="callout-title">The trade every kill makes</p>
+        <p>Aggression creates short-handed chances and kills momentum, but one beaten first man turns a 4-on-5 into a 3-on-4 in front of the net. A passive box protects the slot and the back door but concedes the point and the half-walls, which is why so many goals against a box come from a screened shot rather than a seam pass.</p>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- ============ SPECIAL SITUATIONS ============ -->
+  <section class="section section--alt" id="special" aria-labelledby="spTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">04 — Special Situations</p>
+        <h2 id="spTitle">When the ice is not 5-on-5</h2>
+        <p class="section-lede">Each board carries a qualitative read on both sides of the risk: how often the structure is expected to convert, and what it gives up going the other way. Most games are decided by the minutes nobody rehearses: a two-man advantage, a pulled goaltender, a delayed call, four-on-four after coincidental minors, three-on-three in overtime. Each situation changes the arithmetic — how many options exist, and which pass becomes available.</p>
+      </header>
+
+      <div class="playbook" data-reveal>
+        <div class="tabs" role="tablist" aria-label="Special situations" data-tabs="sp">
+          <button class="tab is-active" role="tab" aria-selected="true" data-play="sp53">5-on-3</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="sp43">4-on-3</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="sp65">6-on-5</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="spDelay">Delayed 6-on-5</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="sp44">4-on-4</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="sp33">3-on-3 OT</button>
+        </div>
+
+        <div class="board-stage">
+          <div class="board board--lg" data-board="sp" data-play="sp53"></div>
+          <div class="board-side">
+            <h3 class="side-title" id="spName">5-on-3 power play</h3>
+            <p class="side-sub" id="spSub">Three killers cannot cover five options.</p>
+            <ol class="steps" id="spSteps"></ol>
+            <div class="legend">
+              <span class="lg-item"><i class="lg-dot lg-dot--h"></i>Attacking side</span>
+              <span class="lg-item"><i class="lg-dot lg-dot--a"></i>Defending side</span>
+              <span class="lg-item"><i class="lg-puck"></i>Puck</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FACE-OFFS & REGROUP ============ -->
+  <section class="section" id="faceoffs" aria-labelledby="fzTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">05 — Face-offs &amp; Regroup</p>
+        <h2 id="fzTitle">The first three seconds, and the reset</h2>
+        <p class="section-lede">A face-off is the only moment in hockey where every player starts from a known place — which is why teams rehearse it as a set play. The regroup is its cousin: when the entry is not there, the modern answer is to turn back and come again with five skaters instead of forcing a low-percentage puck.</p>
+      </header>
+
+      <div class="playbook" data-reveal>
+        <div class="tabs" role="tablist" aria-label="Face-offs and regroup" data-tabs="fz">
+          <button class="tab is-active" role="tab" aria-selected="true" data-play="fzOz">O-zone win</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzOz2">O-zone over-under</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzDz">D-zone win</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzDz2">D-zone reverse</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzPp">PP face-off</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzPp2">PP direct shot</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzReg">Regroup</button>
+          <button class="tab" role="tab" aria-selected="false" data-play="fzTrap">Regroup trap</button>
+        </div>
+
+        <div class="board-stage">
+          <div class="board board--lg" data-board="fz" data-play="fzOz"></div>
+          <div class="board-side">
+            <h3 class="side-title" id="fzName">O-zone face-off win</h3>
+            <p class="side-sub" id="fzSub">Win it back to the point, screen, shoot.</p>
+            <ol class="steps" id="fzSteps"></ol>
+            <div class="legend">
+              <span class="lg-item"><i class="lg-dot lg-dot--h"></i>Our five</span>
+              <span class="lg-item"><i class="lg-dot lg-dot--a"></i>Opponent</span>
+              <span class="lg-item"><i class="lg-puck"></i>Puck</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRADITIONAL VS MODERN ============ -->
+  <section class="section section--alt" id="systems" aria-labelledby="sysTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">06 — Traditional vs Modern</p>
+        <h2 id="sysTitle">What actually changed</h2>
+        <p class="section-lede">The sport did not change its rules so much as its spacing. Traditional systems assigned zones and chased the puck; modern systems assign lanes, stay layered, and treat the middle of the ice as the thing worth defending. Four side-by-side boards show the shift.</p>
+        <p class="section-lede section-lede--watch"><b>Watch the movement, not the shape:</b> trails show where every skater actually goes, the dashed line is the puck, and the numbered arrows are the passes in order. Traditional boards chase late and leave gaps; modern boards arrive early and slide as a unit.</p>
+
+      <p class="board-legend" data-reveal>
+        <span><i class="bl-swatch bl-swatch--trail"></i>Skater movement</span>
+        <span><i class="bl-swatch bl-swatch--puck"></i>Puck path</span>
+        <span><i class="bl-swatch bl-swatch--arrow"></i>Pass / forced pass</span>
+        <span><i class="bl-swatch bl-swatch--chip">1</i>Pass order</span>
+        <span><i class="bl-swatch bl-swatch--zone"></i>Space gained or lost</span>
+      </p>
+      </header>
+
+      <article class="compare" data-reveal>
+        <header class="compare-head">
+          <span class="cmp-num">A</span>
+          <h3>Forecheck</h3>
+          <p>How many skaters chase the puck in the offensive zone, and what the rest protect.</p>
+        </header>
+        <div class="compare-boards">
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--old">Traditional · 2-1-2</p>
+            <div class="board board--sm" data-board="fcTrad" data-mode="mini"></div>
+            <p class="cmp-text">Two forwards chase the puck carrier, one sits high, both defencemen hold the line. Pressure comes fast and creates turnovers right away — but it also leaves the middle open behind the first two.</p>
+          </div>
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--new">Modern · 1-3-1 / layered</p>
+            <div class="board board--sm" data-board="fcMod" data-mode="mini"></div>
+            <p class="cmp-text">One forechecker pressures, three form a wall across the middle, one stays high as a safety. The goal is not the turnover in the corner but the forced pass into the wall.</p>
+          </div>
+        </div>
+        <p class="cmp-verdict"><b>Why it shifted:</b> with faster exits and better puck-moving defencemen, an aggressive two-man chase is beaten by one short pass. Layering trades a chance at a turnover for the guarantee that a beaten forecheck does not become an odd-man rush.</p>
+      </article>
+
+      <article class="compare" data-reveal>
+        <header class="compare-head">
+          <span class="cmp-num">B</span>
+          <h3>Breakout</h3>
+          <p>How the puck leaves its own zone under pressure.</p>
+        </header>
+        <div class="compare-boards">
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--old">Traditional · rim and chase</p>
+            <div class="board board--sm" data-board="boTrad" data-mode="mini"></div>
+            <p class="cmp-text">The defenceman fires the puck hard around the boards and everyone races. Simple, low-risk in the moment, and it turns possession into a footrace along the wall.</p>
+          </div>
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--new">Modern · five-man short support</p>
+            <div class="board board--sm" data-board="boMod" data-mode="mini"></div>
+            <p class="cmp-text">D-to-D, then a short pass to a centre swinging low, with a winger already moving up the wall as the third option. Every pass is short enough to be a real option under pressure.</p>
+          </div>
+        </div>
+        <p class="cmp-verdict"><b>Why it shifted:</b> a rim is a 50-50 puck. A supported breakout keeps possession, and possession is what generates the entries and the offensive-zone time that modern teams measure.</p>
+      </article>
+
+      <article class="compare" data-reveal>
+        <header class="compare-head">
+          <span class="cmp-num">C</span>
+          <h3>Neutral zone</h3>
+          <p>What happens between the two blue lines decides most games.</p>
+        </header>
+        <div class="compare-boards">
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--old">Traditional · 1-2-2</p>
+            <div class="board board--sm" data-board="nzTrad" data-mode="mini"></div>
+            <p class="cmp-text">One forechecker, two in the middle, two back. A reactive shape: it forms after the puck is dumped and reacts to where it lands.</p>
+          </div>
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--new">Modern · 1-3-1 trap</p>
+            <div class="board board--sm" data-board="nzMod" data-mode="mini"></div>
+            <p class="cmp-text">A pre-set wall: one high, three across the centre line, one behind. It invites the pass to the wall and closes it, forcing the dump-in into a set structure.</p>
+          </div>
+        </div>
+        <p class="cmp-verdict"><b>Why it shifted:</b> the trap is not passive. It is a shape designed to make the opponent's first pass a bad one, and it converts neutral-zone turnovers into entries with numbers.</p>
+      </article>
+
+      <article class="compare" data-reveal>
+        <header class="compare-head">
+          <span class="cmp-num">D</span>
+          <h3>Defensive-zone coverage</h3>
+          <p>Who is responsible for which attacker in front of the net.</p>
+        </header>
+        <div class="compare-boards">
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--old">Traditional · man-on-man</p>
+            <div class="board board--sm" data-board="dzTrad" data-mode="mini"></div>
+            <p class="cmp-text">Every defender locks onto a specific opponent and follows him. Clear accountability, but one lost battle or a switch in the slot opens the prime area immediately.</p>
+          </div>
+          <div class="cmp-col">
+            <p class="cmp-tag cmp-tag--new">Modern · low-zone collapse</p>
+            <div class="board board--sm" data-board="dzMod" data-mode="mini"></div>
+            <p class="cmp-text">Four collapse into a tight box around the slot, protect the house, and let the point shoot. Coverage becomes area-first, with man responsibilities picked up inside the box.</p>
+          </div>
+        </div>
+        <p class="cmp-verdict"><b>Why it shifted:</b> shot-quality analysis made the slot the only area worth over-defending. Collapsing concedes low-danger point shots and removes high-danger tips and back-door plays — then the goaltender is expected to stop what is left.</p>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ============ VIDEOS ============ -->
+  <section class="section" id="videos" aria-labelledby="vidTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">07 — Videos</p>
+        <h2 id="vidTitle">Watch the system, not the highlight</h2>
+        <p class="section-lede">English-language coaching channels that explain the same structures the boards above show — power-play geometry, breakout support, penalty-kill rotation, three-on-three, face-off plays. Every link opens on YouTube in a new tab; nothing is embedded here.</p>
+      </header>
+
+      <div class="yt-grid">
+        <a class="yt-card" href="https://www.youtube.com/watch?v=QKhE3UAzhqo" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/QKhE3UAzhqo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">Hockey Decoded · 2:40</span><strong>Top 3 Powerplay Setups: Umbrella vs 1-3-1 vs Overload</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=kxty2MhdApw" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/kxty2MhdApw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">NHL · 7:24</span><strong>NHL Tonight: the 1-3-1 power play</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=Lb5OfNvu3FM" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/Lb5OfNvu3FM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">Coach Matt · 6:00</span><strong>Hockey Breakout Concepts</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=Wkc3mHT7BE8" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/Wkc3mHT7BE8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">247 Hockey · 4:30</span><strong>The Best Breakout Tactics for Wings</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=qoASk8r_-_8" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/qoASk8r_-_8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">Hot Garbage Sports · 17:15</span><strong>NHL Penalty Kill Strategies Explained</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=wJbkQ3mTxIM" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/wJbkQ3mTxIM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">Weiss Tech Hockey · 4:17</span><strong>Offensive Zone Faceoff Options</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=13Rdgh_mvRw" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/13Rdgh_mvRw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">twolinepasshockey · 2:20</span><strong>1-3-1 Neutral Zone Trap, for the casual fan</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=bSgfwvhIT7E" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/bSgfwvhIT7E/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">Steve Buors · 5:33</span><strong>3-on-3 Ice Hockey Gameplay &amp; Strategy</strong></span>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=FcOPRrzTF3s" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="yt-thumb"><img src="https://i.ytimg.com/vi/FcOPRrzTF3s/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play" aria-hidden="true"></span></span>
+          <span class="yt-body"><span class="yt-ch">Hot Garbage Sports · 16:46</span><strong>Top 10 Hockey Strategies That Change How You Watch</strong></span>
+        </a>
+      </div>
+
+      <p class="footnote" data-reveal>Links only — the page loads no YouTube script, cookie or iframe until you click through to the video itself. Titles and channel names are as published by each channel.</p>
+    </div>
+  </section>
+
+  <!-- ============ GLOSSARY ============ -->
+  <section class="section" id="glossary" aria-labelledby="glTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">08 — Glossary</p>
+        <h2 id="glTitle">The words on the whiteboard</h2>
+        <p class="section-lede">Commentary borrows coaching language constantly. These are the terms that show up most, in the sense a coach uses them.</p>
+      </header>
+
+      <dl class="glossary-grid">
+        <div class="gloss" data-reveal><dt>F1 / F2 / F3</dt><dd>The first, second and third forward in the forecheck or backcheck order. Not fixed to a position — whoever is closest takes F1.</dd></div>
+        <div class="gloss" data-reveal><dt>Strong side</dt><dd>The side of the ice the puck is on. Most support and most pressure live here.</dd></div>
+        <div class="gloss" data-reveal><dt>Half-wall</dt><dd>The boards between the goal line and the blue line. The power play's most common puck-handling spot.</dd></div>
+        <div class="gloss" data-reveal><dt>Bumper</dt><dd>The middle player of a 1-3-1, in the slot between the two half-walls. Finds seams and shoots off the pass.</dd></div>
+        <div class="gloss" data-reveal><dt>Seam</dt><dd>The passing lane that runs through the middle of a penalty-kill box or diamond. If it opens, someone is out of position.</dd></div>
+        <div class="gloss" data-reveal><dt>Royal road</dt><dd>The imaginary line through the middle of the offensive zone between the face-off dots. Cross-ice passes across it create the highest-danger chances.</dd></div>
+        <div class="gloss" data-reveal><dt>Gap</dt><dd>The distance between a defender and the puck carrier. Tight gap means pressure; loose gap means time and speed for the attacker.</dd></div>
+        <div class="gloss" data-reveal><dt>Layer</dt><dd>Having a second and third skater behind the first, so a beaten check does not become an odd-man rush.</dd></div>
+        <div class="gloss" data-reveal><dt>Activation</dt><dd>A defenceman joining the rush or stepping below the goal line. The modern four-man attack.</dd></div>
+        <div class="gloss" data-reveal><dt>Cycle</dt><dd>Keeping the puck alive along the walls and behind the net by rotating support, rather than shooting from distance.</dd></div>
+        <div class="gloss" data-reveal><dt>Back door</dt><dd>The far post, behind the defence. The target for a cross-ice pass the goaltender cannot reach.</dd></div>
+        <div class="gloss" data-reveal><dt>Box out</dt><dd>Putting a body between an attacker and the goaltender so a rebound cannot be tipped or buried.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section section--alt" id="sources" aria-labelledby="srcTitle">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">09 — Sources</p>
+        <h2 id="srcTitle">Where the structures come from</h2>
+        <p class="section-lede">Tactic names are coaching shorthand, not rulebook terms — two coaches can use the same label for different details. The diagrams here follow the common published versions of each structure.</p>
+      </header>
+
+      <div class="source-groups">
+        <section class="source-group" data-reveal>
+          <h3>Coaching references</h3>
+          <ul>
+            <li><a href="https://www.icehockeysystems.com/blog/coaching-tips/1-3-1-power-play-5-options" target="_blank" rel="noopener noreferrer">1-3-1 Power Play — 5 Options · Ice Hockey Systems</a></li>
+            <li><a href="https://www.icehockeysystems.com/hockey-systems" target="_blank" rel="noopener noreferrer">Hockey systems library · Ice Hockey Systems</a></li>
+            <li><a href="https://members.thecoachessite.com/video/explained-1-3-1-power-play-formation" target="_blank" rel="noopener noreferrer">Explained: 1-3-1 power play formation · The Coaches Site</a></li>
+            <li><a href="https://www.usahockey.com/coaching" target="_blank" rel="noopener noreferrer">USA Hockey coaching resources</a></li>
+            <li><a href="https://www.hockeycanada.ca/en-ca/hockey-programs/coaching" target="_blank" rel="noopener noreferrer">Hockey Canada coaching program</a></li>
+            <li><a href="https://www.iihf.com/en/statichub/4719/rules-and-regulations" target="_blank" rel="noopener noreferrer">IIHF rules and regulations hub</a></li>
+          </ul>
+        </section>
+
+        <section class="source-group" data-reveal>
+          <h3>Terminology and analysis</h3>
+          <ul>
+            <li><a href="https://www.nhl.com/info/video-rulebook" target="_blank" rel="noopener noreferrer">NHL Video Rulebook — official rule demonstrations</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Ice_hockey" target="_blank" rel="noopener noreferrer">Ice hockey — Wikipedia (positions and playing structure)</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Power_play_(ice_hockey)" target="_blank" rel="noopener noreferrer">Power play — Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Penalty_kill" target="_blank" rel="noopener noreferrer">Penalty kill — Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Forechecking" target="_blank" rel="noopener noreferrer">Forechecking — Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Neutral_zone_trap" target="_blank" rel="noopener noreferrer">Neutral zone trap — Wikipedia</a></li>
+          </ul>
+        </section>
+
+        <section class="source-group source-group--wide" data-reveal>
+          <h3>Further reading &amp; channels</h3>
+          <ul>
+            <li><a href="https://us.humankinetics.com/products/hockey-plays-and-strategies-2nd-edition" target="_blank" rel="noopener noreferrer">Hockey Plays and Strategies, 2nd ed. — Mike Johnston &amp; Ryan Walter (Human Kinetics)</a></li>
+            <li><a href="https://www.icehockeysystems.com/ice-hockey-systems" target="_blank" rel="noopener noreferrer">Ice Hockey Systems — systems library (face-offs, forechecking, D-zone, PP, PK, breakouts)</a></li>
+            <li><a href="https://overloadhockey.com/systems" target="_blank" rel="noopener noreferrer">Overload Hockey — systems library</a></li>
+            <li><a href="https://members.thecoachessite.com/video/explained-1-3-1-power-play-formation" target="_blank" rel="noopener noreferrer">The Coaches Site — 1-3-1 power play formation, explained</a></li>
+            <li><a href="https://www.youtube.com/@HockeyCoachVision" target="_blank" rel="noopener noreferrer">Hockey Coach Vision — YouTube channel (glossary shorts)</a></li>
+            <li><a href="https://www.youtube.com/@RinkTactics" target="_blank" rel="noopener noreferrer">Rink Tactics — YouTube channel (F1/F2/F3 roles, systems)</a></li>
+            <li><a href="https://www.usahockey.com/coaching" target="_blank" rel="noopener noreferrer">USA Hockey — coaching resources</a></li>
+            <li><a href="https://www.hockeycanada.ca/en-ca/hockey-programs/coaching" target="_blank" rel="noopener noreferrer">Hockey Canada — coaching program</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="limits" data-reveal>
+        <h3>Stated limitations</h3>
+        <ul>
+          <li>Diagrams are schematic teaching boards, not exact measurements — player spacing is exaggerated so the pattern is readable.</li>
+          <li>Structure names and assignments vary by coach and league. A "diamond" in one program can be a "1-2-1" in another.</li>
+          <li>Modern trends are described qualitatively. No proprietary tracking data is reproduced here, and no claim is made about how often any NHL team runs a given system in 2026-27.</li>
+          <li>Roles are described for five-on-five and special teams. Rule-specific details (icing, offside, penalty procedure) live on the companion rules site.</li>
+          <li>Special-situation boards (5-on-3, 4-on-3, 6-on-5, delayed penalty, 4-on-4, 3-on-3, face-offs, regroup) show the standard read, not a team-specific playbook; clubs vary the assignments.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <strong>HOCKEY<span>TACTICS</span></strong>
+      <p>Position roles, special teams and system change — on animated tactic boards.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#positions">Positions</a>
+      <a href="#powerplay">Power Play</a>
+      <a href="#penaltykill">Penalty Kill</a>
+      <a href="#systems">Trad vs Modern</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <p class="footer-credit">Produced by <b>STRYDE</b> · Not affiliated with the NHL or the IIHF.</p>
+  </div>
+</footer>
+
+<script src="js/ko.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/tactics.js"></script>
+<script src="js/boards-plus.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
